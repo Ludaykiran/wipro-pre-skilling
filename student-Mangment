@@ -1,0 +1,61 @@
+Student Management System: Introduction to C# Object-Oriented Programming
+In this assignment, you will create a simple student management system using C#. You will define a custom class called Student to represent students and implement basic functionalities to add, view, and update student records.
+Task:
+1.	Define the Student Class:
+o	Create a C# class named Student.
+o	Add properties to the class: Name (string type), Age (integer type), and Grade (string type).
+o	Implement a constructor in the Student class to initialize these properties.
+2.	Input Handling:
+o	Use the Console.ReadLine() method to prompt the user to enter the student's name, age, and grade.
+o	Convert the user input for age to an integer using Convert.ToInt32() method.
+3.	Create an Instance of the Student Class:
+o	Instantiate the Student class using the input provided by the user for name, age, and grade.
+4.	Print Output:
+o	Print out the values of the Name, Age, and Grade properties of the created Student instance to the console.
+
+
+using System;
+class Student
+{
+    // Step 1: Define properties
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string Grade { get; set; }
+
+    // Step 2: Define constructor to initialize properties
+    public Student(string name, int age, string grade)
+    {
+        Name = name;
+        Age = age;
+        Grade = grade;
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Step 3: Prompt the user to enter the student's name
+        Console.WriteLine("Enter student's name:");
+        string name = Console.ReadLine();
+
+        // Step 4: Prompt the user to enter the student's age and convert it to an integer
+        Console.WriteLine("Enter student's age:");
+        int age = Convert.ToInt32(Console.ReadLine());
+
+        // Step 5: Prompt the user to enter the student's grade
+        Console.WriteLine("Enter student's grade:");
+        string grade = Console.ReadLine();
+
+        // Step 6: Create an instance of the Student class using the input
+        Student student = new Student(name, age, grade);
+
+        // Step 7: Print the student's details to the console
+        
+        Console.WriteLine($"Student Name: {student.Name}");
+        Console.WriteLine($"Student Age: {student.Age}");
+        Console.WriteLine($"Student Grade: {student.Grade}");
+
+        // Pause the console to allow the user to see the output
+        Console.ReadLine();
+    }
+}
